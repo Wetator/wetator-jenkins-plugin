@@ -19,6 +19,8 @@ src/main/java/org/wetator/jenkins/result/StepError.java -text svneol=unset#text/
 src/main/java/org/wetator/jenkins/result/TestFileResult.java -text svneol=unset#text/plain
 src/main/java/org/wetator/jenkins/result/TestResult.java -text svneol=unset#text/plain
 src/main/java/org/wetator/jenkins/result/TestResults.java -text svneol=unset#text/plain
+src/main/java/org/wetator/jenkins/util/AtomicGZIPFileWriter.java -text svneol=unset#text/plain
+src/main/java/org/wetator/jenkins/util/GZIPXMLFile.java -text svneol=unset#text/plain
 src/main/resources/index.jelly -text
 src/main/resources/org/wetator/jenkins/History/index.jelly -text
 src/main/resources/org/wetator/jenkins/History/index.properties -text svneol=unset#text/plain
