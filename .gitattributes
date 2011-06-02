@@ -12,6 +12,7 @@ src/main/java/org/wetator/jenkins/PluginImpl.java -text svneol=unset#text/plain
 src/main/java/org/wetator/jenkins/WetatorBuildReport.java -text svneol=unset#text/plain
 src/main/java/org/wetator/jenkins/WetatorProjectReport.java -text svneol=unset#text/plain
 src/main/java/org/wetator/jenkins/WetatorRecorder.java -text svneol=unset#text/plain
+src/main/java/org/wetator/jenkins/parser/Path.java -text svneol=unset#text/plain
 src/main/java/org/wetator/jenkins/parser/WetatorResultParser.java -text svneol=unset#text/plain
 src/main/java/org/wetator/jenkins/result/AbstractBaseResult.java -text svneol=unset#text/plain
 src/main/java/org/wetator/jenkins/result/BrowserResult.java -text svneol=unset#text/plain
@@ -65,6 +66,7 @@ src/main/webapp/help-projectConfig.html -text svneol=unset#text/plain
 src/main/webapp/icons/wetator-48x48.png -text
 src/test/java/org/wetator/jenkins/AllTests.java -text svneol=unset#text/plain
 src/test/java/org/wetator/jenkins/parser/AllTests.java -text svneol=unset#text/plain
+src/test/java/org/wetator/jenkins/parser/PathTest.java -text svneol=unset#text/plain
 src/test/java/org/wetator/jenkins/parser/WetatorResultParserTest.java -text svneol=unset#text/plain
 src/test/resources/wetresult.xml -text svneol=unset#text/plain
 src/test/resources/wetresult2.xml -text svneol=unset#text/plain
