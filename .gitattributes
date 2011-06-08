@@ -38,8 +38,14 @@ src/main/resources/org/wetator/jenkins/WetatorProjectReport/floatingBox_de.prope
 src/main/resources/org/wetator/jenkins/WetatorRecorder/config.jelly -text
 src/main/resources/org/wetator/jenkins/WetatorRecorder/config.properties -text svneol=unset#text/plain
 src/main/resources/org/wetator/jenkins/WetatorRecorder/config_de.properties -text svneol=unset#text/plain
+src/main/resources/org/wetator/jenkins/WetatorRecorder/help-failureThreshold.html -text svneol=unset#text/plain
+src/main/resources/org/wetator/jenkins/WetatorRecorder/help-failureThreshold_de.html -text svneol=unset#text/plain
 src/main/resources/org/wetator/jenkins/WetatorRecorder/help-testResults.html -text svneol=unset#text/plain
+src/main/resources/org/wetator/jenkins/WetatorRecorder/help-testResults_de.html -text svneol=unset#text/plain
+src/main/resources/org/wetator/jenkins/WetatorRecorder/help-unstableThreshold.html -text svneol=unset#text/plain
+src/main/resources/org/wetator/jenkins/WetatorRecorder/help-unstableThreshold_de.html -text svneol=unset#text/plain
 src/main/resources/org/wetator/jenkins/WetatorRecorder/help.html -text svneol=unset#text/plain
+src/main/resources/org/wetator/jenkins/WetatorRecorder/help_de.html -text svneol=unset#text/plain
 src/main/resources/org/wetator/jenkins/result/AbstractBaseResult/index.jelly -text
 src/main/resources/org/wetator/jenkins/result/AbstractBaseResult/sidepanel.jelly -text
 src/main/resources/org/wetator/jenkins/result/AbstractBaseResult/sidepanel_de.properties -text svneol=unset#text/plain
