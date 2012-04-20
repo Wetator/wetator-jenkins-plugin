@@ -75,5 +75,6 @@ src/test/java/org/wetator/jenkins/AllTests.java -text svneol=unset#text/plain
 src/test/java/org/wetator/jenkins/parser/AllTests.java -text svneol=unset#text/plain
 src/test/java/org/wetator/jenkins/parser/PathTest.java -text svneol=unset#text/plain
 src/test/java/org/wetator/jenkins/parser/WetatorResultParserTest.java -text svneol=unset#text/plain
+src/test/resources/oldwetresult.xml -text svneol=unset#text/plain
+src/test/resources/oldwetresult2.xml -text svneol=unset#text/plain
 src/test/resources/wetresult.xml -text svneol=unset#text/plain
-src/test/resources/wetresult2.xml -text svneol=unset#text/plain
