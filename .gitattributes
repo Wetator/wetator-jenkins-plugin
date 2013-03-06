@@ -1,6 +1,7 @@
 * text=auto !eol
 /.classpath -text svneol=unset#text/plain
 /.project -text svneol=unset#text/plain
+.settings/org.eclipse.core.resources.prefs -text svneol=unset#text/plain
 .settings/org.eclipse.jdt.core.prefs -text svneol=unset#text/plain
 .settings/org.eclipse.jdt.ui.prefs -text svneol=unset#text/plain
 .settings/org.eclipse.m2e.core.prefs -text svneol=unset#text/plain
