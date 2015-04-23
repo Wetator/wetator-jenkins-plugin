@@ -165,3 +165,4 @@ src/test/resources/org/wetator/jenkins/xstream/output/twoTestFileOneBrowserOneTe
 src/test/resources/org/wetator/jenkins/xstream/output/zeroReportFile.xml -text svneol=unset#text/plain
 src/test/resources/wetresult.xml -text svneol=unset#text/plain
 util/JenkinsPluginTest.java -text svneol=unset#text/plain
+/wetator-jenkins-plugin[!!-~]-[!!-~]clean[!!-~]compile.launch -text svneol=unset#text/plain
