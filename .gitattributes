@@ -6,7 +6,6 @@
 .settings/org.eclipse.jdt.ui.prefs -text svneol=unset#text/plain
 .settings/org.eclipse.m2e.core.prefs -text svneol=unset#text/plain
 /LICENSE.txt -text svneol=unset#text/plain
-/ToDo.txt -text svneol=unset#text/plain
 /pom.xml -text svneol=unset#text/plain
 /readme.txt -text svneol=unset#text/plain
 /results.txt -text svneol=unset#text/plain
