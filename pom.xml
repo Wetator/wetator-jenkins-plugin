@@ -76,7 +76,7 @@
     </issueManagement>
     <ciManagement>
         <system>jenkins</system>
-        <url>https://wetator.ci.cloudbees.com/job/wetator-jenkins-plugin/</url>
+        <url>https://www.wetator.org/jenkins/job/wetator-jenkins-plugin/</url>
     </ciManagement>
     <distributionManagement>
         <!-- Publish the versioned releases here -->
@@ -97,7 +97,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version><!--$NO-MVN-MAN-VER$-->
+                <version>3.8.1</version><!--$NO-MVN-MAN-VER$-->
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -143,12 +143,12 @@
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>3.1.6</version><!--$NO-MVN-MAN-VER$-->
+                <version>3.1.12.2</version><!--$NO-MVN-MAN-VER$-->
                 <dependencies>
                     <dependency>
                         <groupId>com.github.spotbugs</groupId>
                         <artifactId>spotbugs</artifactId>
-                        <version>3.1.6</version>
+                        <version>3.1.12</version>
                     </dependency>
                 </dependencies>
                 <executions>
@@ -170,12 +170,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.10.0</version><!--$NO-MVN-MAN-VER$-->
+                <version>3.12.0</version><!--$NO-MVN-MAN-VER$-->
                 <dependencies>
                     <dependency>
                         <groupId>net.sourceforge.pmd</groupId>
                         <artifactId>pmd-java</artifactId>
-                        <version>6.5.0</version>
+                        <version>6.20.0</version>
                     </dependency>
                 </dependencies>
                 <executions>
@@ -342,7 +342,7 @@
         <dependency>
             <groupId>org.wetator</groupId>
             <artifactId>wetator</artifactId>
-            <version>1.9.0</version>
+            <version>1.10.0</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -363,13 +363,13 @@
             <!-- needed by Wetator -->
             <groupId>xerces</groupId>
             <artifactId>xercesImpl</artifactId>
-            <version>2.11.0</version>
+            <version>2.12.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>2.19.0</version>
+            <version>3.2.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
