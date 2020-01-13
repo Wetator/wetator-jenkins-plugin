@@ -35,7 +35,7 @@ public class TestResults extends AbstractBaseResult {
 
   private static final long serialVersionUID = 5332974371295204003L;
 
-  private List<TestResult> testResults = new ArrayList<>();
+  private List<TestResult> testResults = new ArrayList<>(); // NOPMD
   private List<String> reportFiles = new ArrayList<>();
   private transient List<BrowserResult> passedTests = new ArrayList<>();
   private transient List<BrowserResult> skippedTests = new ArrayList<>();
@@ -52,7 +52,7 @@ public class TestResults extends AbstractBaseResult {
    *
    * @param name the name to set
    */
-  public TestResults(String name) {
+  public TestResults(String name) { // NOPMD
     this.name = name;
   }
 
@@ -73,7 +73,7 @@ public class TestResults extends AbstractBaseResult {
     return reportFiles;
   }
 
-  public void setReportFiles(List<String> reportFiles) {
+  public void setReportFiles(List<String> reportFiles) { // NOPMD
     this.reportFiles = reportFiles;
   }
 
@@ -84,7 +84,7 @@ public class TestResults extends AbstractBaseResult {
     return failedTests;
   }
 
-  public void setFailedTests(List<BrowserResult> failedTests) {
+  public void setFailedTests(List<BrowserResult> failedTests) { // NOPMD
     this.failedTests = failedTests;
   }
 
@@ -95,7 +95,7 @@ public class TestResults extends AbstractBaseResult {
     return skippedTests;
   }
 
-  public void setSkippedTests(List<BrowserResult> skippedTests) {
+  public void setSkippedTests(List<BrowserResult> skippedTests) { // NOPMD
     this.skippedTests = skippedTests;
   }
 
@@ -106,7 +106,7 @@ public class TestResults extends AbstractBaseResult {
     return passedTests;
   }
 
-  public void setPassedTests(List<BrowserResult> passedTests) {
+  public void setPassedTests(List<BrowserResult> passedTests) { // NOPMD
     this.passedTests = passedTests;
   }
 
@@ -117,7 +117,7 @@ public class TestResults extends AbstractBaseResult {
     return testResults;
   }
 
-  public void setTestResults(List<TestResult> testResults) {
+  public void setTestResults(List<TestResult> testResults) { // NOPMD
     this.testResults = testResults;
   }
 
@@ -160,12 +160,12 @@ public class TestResults extends AbstractBaseResult {
   /**
    * @param testFileMap the testFileMap to set
    */
-  public void setTestFileMap(Map<String, TestFileResult> testFileMap) {
+  public void setTestFileMap(Map<String, TestFileResult> testFileMap) { // NOPMD
     this.testFileMap = testFileMap;
   }
 
   @Override
-  public void setOwner(AbstractBuild<?, ?> owner) {
+  public void setOwner(AbstractBuild<?, ?> owner) { // NOPMD
     super.setOwner(owner);
     for (TestResult tmpTest : testResults) {
       tmpTest.setOwner(owner);
@@ -200,8 +200,7 @@ public class TestResults extends AbstractBaseResult {
       return tmpTestFileResult;
     }
 
-    BrowserResult tmpBrowserResult = tmpTestFileResult.getBrowserResult(tmpBrowserName);
-    return tmpBrowserResult;
+    return tmpTestFileResult.getBrowserResult(tmpBrowserName);
   }
 
   @Override
@@ -218,8 +217,7 @@ public class TestResults extends AbstractBaseResult {
 
   @Override
   public int hashCode() {
-    int tmpResult;
-    tmpResult = (owner != null ? owner.hashCode() : 0);
+    int tmpResult = owner != null ? owner.hashCode() : 0;
     tmpResult = 31 * tmpResult + name.hashCode();
     return tmpResult;
   }
@@ -230,7 +228,7 @@ public class TestResults extends AbstractBaseResult {
         + ", failCount=" + failCount + '}';
   }
 
-  private void add(TestResults r, boolean tally) {
+  private void add(TestResults r, boolean tally) { // NOPMD
     testResults.addAll(r.getTestResults());
     failedTests.addAll(r.getFailedTests());
     skippedTests.addAll(r.getSkippedTests());
@@ -285,7 +283,7 @@ public class TestResults extends AbstractBaseResult {
    * @param response the response
    * @return the {@link TestFileResult} if the token matches or null
    */
-  public Object getDynamic(String token, StaplerRequest request, StaplerResponse response) {
+  public Object getDynamic(String token, StaplerRequest request, StaplerResponse response) { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     return testFileUrlMap.get(token);
   }

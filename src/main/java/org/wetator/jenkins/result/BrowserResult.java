@@ -73,7 +73,7 @@ public class BrowserResult extends AbstractBaseResult {
   /**
    * @param error the error to set
    */
-  public void setError(TestError error) {
+  public void setError(TestError error) { // NOPMD
     this.error = error;
   }
 
@@ -190,7 +190,7 @@ public class BrowserResult extends AbstractBaseResult {
   }
 
   @Override
-  public AbstractBaseResult getResultInBuild(AbstractBuild<?, ?> build) {
+  public AbstractBaseResult getResultInBuild(AbstractBuild<?, ?> build) { // NOPMD
     WetatorBuildReport tmpBuildReport = build.getAction(WetatorBuildReport.class);
     if (tmpBuildReport == null) {
       return null;
@@ -218,7 +218,7 @@ public class BrowserResult extends AbstractBaseResult {
    * @param rsp the response
    * @return this if the token matches or null
    */
-  public Object getDynamic(String token, StaplerRequest req, StaplerResponse rsp) {
+  public Object getDynamic(String token, StaplerRequest req, StaplerResponse rsp) { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     if (token.equals("/" + safe(getName()))) {
       return this;

@@ -71,13 +71,31 @@ public class WetatorBuildReport implements HealthReportingAction, StaplerProxy, 
 
   private Map<String, String> descriptions = new ConcurrentHashMap<>();
 
+  private static final XStream XSTREAM = new XStream2();
+
+  static {
+    initializeXStream(XSTREAM);
+  }
+
+  public static void initializeXStream(XStream anXStream) {
+    anXStream.alias("testResults", TestResults.class);
+    anXStream.alias("testResult", TestResult.class);
+    anXStream.alias("testFileResult", TestFileResult.class);
+    anXStream.alias("browserResult", BrowserResult.class);
+    anXStream.alias("stepError", StepError.class);
+    anXStream.alias("testError", TestError.class);
+    anXStream.registerConverter(new ErrorConverter(anXStream.getMapper(),
+        anXStream.getConverterLookup().lookupConverterForType(TestError.class), anXStream.getReflectionProvider()));
+    anXStream.registerConverter(new HeapSpaceStringConverter(), 100);
+  }
+
   /**
    * The constructor.
    *
    * @param build the build this report belongs to
    * @param results the {@link TestResults} to report
    */
-  public WetatorBuildReport(AbstractBuild<?, ?> build, TestResults results, BuildListener listener) {
+  public WetatorBuildReport(AbstractBuild<?, ?> build, TestResults results, BuildListener listener) { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     this.build = build;
     setResults(results, listener);
@@ -112,14 +130,14 @@ public class WetatorBuildReport implements HealthReportingAction, StaplerProxy, 
     TestResults tmpResults;
     if (results == null) {
       tmpResults = load();
-      results = new WeakReference<TestResults>(tmpResults);
+      results = new WeakReference<>(tmpResults);
     } else {
       tmpResults = results.get();
     }
 
     if (tmpResults == null) {
       tmpResults = load();
-      results = new WeakReference<TestResults>(tmpResults);
+      results = new WeakReference<>(tmpResults);
     }
     if (totalCount == null) {
       totalCount = Integer.valueOf(tmpResults.getTotalCount());
@@ -150,7 +168,7 @@ public class WetatorBuildReport implements HealthReportingAction, StaplerProxy, 
       e.printStackTrace(aListener.fatalError("Failed to save the Wetator test result"));
     }
 
-    results = new WeakReference<TestResults>(aResults);
+    results = new WeakReference<>(aResults);
   }
 
   /**
@@ -325,24 +343,6 @@ public class WetatorBuildReport implements HealthReportingAction, StaplerProxy, 
     return tmpTestResults;
   }
 
-  private static final XStream XSTREAM = new XStream2();
-
-  static {
-    initializeXStream(XSTREAM);
-  }
-
-  public static void initializeXStream(XStream anXStream) {
-    anXStream.alias("testResults", TestResults.class);
-    anXStream.alias("testResult", TestResult.class);
-    anXStream.alias("testFileResult", TestFileResult.class);
-    anXStream.alias("browserResult", BrowserResult.class);
-    anXStream.alias("stepError", StepError.class);
-    anXStream.alias("testError", TestError.class);
-    anXStream.registerConverter(new ErrorConverter(anXStream.getMapper(),
-        anXStream.getConverterLookup().lookupConverterForType(TestError.class), anXStream.getReflectionProvider()));
-    anXStream.registerConverter(new HeapSpaceStringConverter(), 100);
-  }
-
   @Override
   public Object getTarget() {
     return getResults();
@@ -356,7 +356,7 @@ public class WetatorBuildReport implements HealthReportingAction, StaplerProxy, 
    * @param response the response
    * @return this if the token matches or null
    */
-  public Object getDynamic(String token, StaplerRequest request, StaplerResponse response) {
+  public Object getDynamic(String token, StaplerRequest request, StaplerResponse response) { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     return getResults().getDynamic(token, request, response);
   }

@@ -65,7 +65,7 @@ public class WetatorRecorder extends Recorder {
    * @param testResults the file patter of the test results
    */
   @DataBoundConstructor
-  public WetatorRecorder(String testResults, String testReports, String unstableThreshold, String failureThreshold) {
+  public WetatorRecorder(String testResults, String testReports, String unstableThreshold, String failureThreshold) { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     this.testResults = testResults;
     this.testReports = testReports;
@@ -161,7 +161,7 @@ public class WetatorRecorder extends Recorder {
   }
 
   @Override
-  public Collection<Action> getProjectActions(AbstractProject<?, ?> project) {
+  public Collection<Action> getProjectActions(AbstractProject<?, ?> project) { // NOPMD
     return Collections.<Action> singleton(new WetatorProjectReport(project));
   }
 
@@ -195,8 +195,8 @@ public class WetatorRecorder extends Recorder {
      * @return the result of the check
      * @throws IOException in case of problems
      */
-    public FormValidation doCheckTestResults(@AncestorInPath AbstractProject<?, ?> project,
-        @QueryParameter String value) throws IOException {
+    public FormValidation doCheckTestResults(@AncestorInPath AbstractProject<?, ?> project, // NOPMD
+        @QueryParameter String value) throws IOException { // NOPMD
       // the method parameters must be raw (without leading a) to make stapler work
       if (project == null) {
         return FormValidation.ok();
@@ -212,8 +212,8 @@ public class WetatorRecorder extends Recorder {
      * @return the result of the check
      * @throws IOException in case of problems
      */
-    public FormValidation doCheckUnstableThreshold(@AncestorInPath AbstractProject<?, ?> project,
-        @QueryParameter String value) throws IOException {
+    public FormValidation doCheckUnstableThreshold(@AncestorInPath AbstractProject<?, ?> project, // NOPMD
+        @QueryParameter String value) throws IOException { // NOPMD
       // the method parameters must be raw (without leading a) to make stapler work
       if (StringUtils.isBlank(value)) {
         return FormValidation.ok();
@@ -229,8 +229,8 @@ public class WetatorRecorder extends Recorder {
      * @return the result of the check
      * @throws IOException in case of problems
      */
-    public FormValidation doCheckFailureThreshold(@AncestorInPath AbstractProject<?, ?> project,
-        @QueryParameter String value) throws IOException {
+    public FormValidation doCheckFailureThreshold(@AncestorInPath AbstractProject<?, ?> project, // NOPMD
+        @QueryParameter String value) throws IOException { // NOPMD
       // the method parameters must be raw (without leading a) to make stapler work
       if (StringUtils.isBlank(value)) {
         return FormValidation.ok();

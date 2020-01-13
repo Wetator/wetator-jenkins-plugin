@@ -57,7 +57,7 @@ public class History {
    *
    * @param result the result to build the history of
    */
-  public History(AbstractBaseResult result) {
+  public History(AbstractBaseResult result) { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     this.result = result;
   }
@@ -83,7 +83,7 @@ public class History {
    * @return a list containing the results
    */
   @SuppressWarnings("deprecation")
-  public List<AbstractBaseResult> getList(int start, int end) {
+  public List<AbstractBaseResult> getList(int start, int end) { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     List<AbstractBaseResult> tmpList = new ArrayList<>();
     int tmpEnd = end;

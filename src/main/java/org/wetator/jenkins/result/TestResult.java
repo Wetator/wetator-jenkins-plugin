@@ -49,7 +49,7 @@ public class TestResult extends AbstractBaseResult {
   /**
    * @param testFileResults the testFileResults to set
    */
-  public void setTestFileResults(List<TestFileResult> testFileResults) {
+  public void setTestFileResults(List<TestFileResult> testFileResults) { // NOPMD
     this.testFileResults = testFileResults;
   }
 

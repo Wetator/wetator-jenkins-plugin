@@ -66,7 +66,7 @@ public class WetatorProjectReport implements ProminentProjectAction {
   /**
    * @param project the project this report belongs to
    */
-  public WetatorProjectReport(AbstractProject<?, ?> project) {
+  public WetatorProjectReport(AbstractProject<?, ?> project) { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     this.project = project;
   }
@@ -109,7 +109,7 @@ public class WetatorProjectReport implements ProminentProjectAction {
    * @throws IOException
    *         in case of an error
    */
-  public void doIndex(final StaplerRequest request, final StaplerResponse response) throws IOException {
+  public void doIndex(final StaplerRequest request, final StaplerResponse response) throws IOException { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     AbstractBuild<?, ?> tmpBuild = getLastCompletedBuild();
     if (tmpBuild != null) {
@@ -161,7 +161,7 @@ public class WetatorProjectReport implements ProminentProjectAction {
    * @throws IOException in case of problems generating the trend graph
    */
   @SuppressWarnings("deprecation")
-  public void doTrend(StaplerRequest request, StaplerResponse response) throws IOException {
+  public void doTrend(StaplerRequest request, StaplerResponse response) throws IOException { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     WetatorBuildReport tmpBuildReport = getLastCompletedBuildReport();
     if (tmpBuildReport == null) {
@@ -192,7 +192,7 @@ public class WetatorProjectReport implements ProminentProjectAction {
    * @throws IOException in case of problems generating the trend map
    */
   @SuppressWarnings("deprecation")
-  public void doTrendMap(StaplerRequest request, StaplerResponse response) throws IOException {
+  public void doTrendMap(StaplerRequest request, StaplerResponse response) throws IOException { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     WetatorBuildReport tmpBuildReport = getLastCompletedBuildReport();
     if (tmpBuildReport == null) {
@@ -217,7 +217,7 @@ public class WetatorProjectReport implements ProminentProjectAction {
    * @param response the response
    * @throws IOException in case of problems during redirect
    */
-  public void doFlipTrend(StaplerRequest request, StaplerResponse response) throws IOException {
+  public void doFlipTrend(StaplerRequest request, StaplerResponse response) throws IOException { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     boolean tmpFailureOnly = false;
 

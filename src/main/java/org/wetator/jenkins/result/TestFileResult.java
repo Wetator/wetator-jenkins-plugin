@@ -67,7 +67,7 @@ public class TestFileResult extends AbstractBaseResult {
   /**
    * @param totalCount the totalCount to set
    */
-  public void setTotalCount(int totalCount) {
+  public void setTotalCount(int totalCount) { // NOPMD
     this.totalCount = totalCount;
   }
 
@@ -85,7 +85,7 @@ public class TestFileResult extends AbstractBaseResult {
   /**
    * @param browserResults the browserResults to set
    */
-  public void setBrowserResults(List<BrowserResult> browserResults) {
+  public void setBrowserResults(List<BrowserResult> browserResults) { // NOPMD
     this.browserResults = browserResults;
   }
 
@@ -111,7 +111,7 @@ public class TestFileResult extends AbstractBaseResult {
   }
 
   @Override
-  public void setOwner(AbstractBuild<?, ?> owner) {
+  public void setOwner(AbstractBuild<?, ?> owner) { // NOPMD
     super.setOwner(owner);
 
     for (BrowserResult tmpBrowserResult : this.browserResults) {
@@ -166,7 +166,7 @@ public class TestFileResult extends AbstractBaseResult {
    * @param rsp the response
    * @return this or a child {@link BrowserResult} if the token matches or null
    */
-  public Object getDynamic(String token, StaplerRequest req, StaplerResponse rsp) {
+  public Object getDynamic(String token, StaplerRequest req, StaplerResponse rsp) { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     if (token.equals("/" + safe(getName()))) {
       return this;

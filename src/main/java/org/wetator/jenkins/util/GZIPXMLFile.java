@@ -254,8 +254,8 @@ public class GZIPXMLFile {
         encoding = anEncoding;
       }
     }
-    InputSource input = new InputSource(file.toURI().toASCIIString());
-    input.setByteStream(new FileInputStream(file));
+    InputSource tmpInput = new InputSource(file.toURI().toASCIIString());
+    tmpInput.setByteStream(new FileInputStream(file));
 
     try {
       JAXP.newSAXParser().parse(file, new DefaultHandler() {
@@ -310,7 +310,7 @@ public class GZIPXMLFile {
       throw new AssertionError(e); // impossible
     } finally {
       // some JAXP implementations appear to leak the file handle if we just call parse(File,DefaultHandler)
-      input.getByteStream().close();
+      tmpInput.getByteStream().close();
     }
   }
 }

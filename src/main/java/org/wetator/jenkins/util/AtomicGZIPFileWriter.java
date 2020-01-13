@@ -116,9 +116,9 @@ public class AtomicGZIPFileWriter extends Writer {
     if (destinationFile.exists()) {
       try {
         Util.deleteFile(destinationFile);
-      } catch (IOException x) {
+      } catch (IOException e) {
         temporaryFile.delete();
-        throw x;
+        throw e;
       }
     }
     temporaryFile.renameTo(destinationFile);

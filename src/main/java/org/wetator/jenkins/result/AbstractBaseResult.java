@@ -68,7 +68,7 @@ public abstract class AbstractBaseResult extends AbstractModelObject implements 
   /**
    * @param owner the owning build to set
    */
-  public void setOwner(AbstractBuild<?, ?> owner) {
+  public void setOwner(AbstractBuild<?, ?> owner) { // NOPMD
     this.owner = owner;
   }
 
@@ -82,7 +82,7 @@ public abstract class AbstractBaseResult extends AbstractModelObject implements 
   /**
    * @param name the name to set
    */
-  public void setName(String name) {
+  public void setName(String name) { // NOPMD
     this.name = name;
   }
 
@@ -96,7 +96,7 @@ public abstract class AbstractBaseResult extends AbstractModelObject implements 
   /**
    * @param parent the parent result to set
    */
-  public void setParent(AbstractBaseResult parent) {
+  public void setParent(AbstractBaseResult parent) { // NOPMD
     this.parent = parent;
   }
 
@@ -110,14 +110,14 @@ public abstract class AbstractBaseResult extends AbstractModelObject implements 
   /**
    * @param fullName the full name to set
    */
-  public void setFullName(String fullName) {
+  public void setFullName(String fullName) { // NOPMD
     this.fullName = fullName;
   }
 
   /**
    * Replaces URL-unsafe characters.
    */
-  public static String safe(String s) {
+  public static String safe(String s) { // NOPMD
     // 3 replace calls is still 2-3x faster than a regex replaceAll
     return s.replace('/', '_').replace('\\', '_').replace(':', '_');
   }
@@ -222,7 +222,7 @@ public abstract class AbstractBaseResult extends AbstractModelObject implements 
    *
    * @return null if no such counter part exists.
    */
-  public AbstractBaseResult getResultInBuild(AbstractBuild<?, ?> build) {
+  public AbstractBaseResult getResultInBuild(AbstractBuild<?, ?> build) { // NOPMD
     WetatorBuildReport tmpBuildReport = build.getAction(WetatorBuildReport.class);
     if (tmpBuildReport == null) {
       return null;
@@ -244,7 +244,7 @@ public abstract class AbstractBaseResult extends AbstractModelObject implements 
   /**
    * @param description the description (= annotation of the result) to set
    */
-  public void setDescription(String description) {
+  public void setDescription(String description) { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     WetatorBuildReport tmpReport = owner.getAction(WetatorBuildReport.class);
     if (tmpReport != null) {
@@ -259,7 +259,7 @@ public abstract class AbstractBaseResult extends AbstractModelObject implements 
    * @return the response
    * @throws IOException in case of problems
    */
-  public synchronized HttpResponse doSubmitDescription(@QueryParameter String description) throws IOException {
+  public synchronized HttpResponse doSubmitDescription(@QueryParameter String description) throws IOException { // NOPMD
     // the method parameters must be raw (without leading a) to make stapler work
     if (getOwner() == null) {
       LOG.severe("getOwner() is null, can't save description.");
