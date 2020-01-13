@@ -18,7 +18,6 @@ package org.wetator.jenkins.util;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,6 +25,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.nio.file.Files;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 
@@ -105,13 +105,13 @@ public class GZIPXMLFile {
   private InputStream getInputStream() throws FileNotFoundException, IOException {
     if (file.exists()) {
       LOGGER.fine("Reading " + file);
-      return new GZIPInputStream(new FileInputStream(file));
+      return new GZIPInputStream(Files.newInputStream(file.toPath()));
     }
     String tmpFileName = file.getName();
     tmpFileName = tmpFileName.replace(".gz", ".xml");
     File tmpFile = new File(file.getParentFile(), tmpFileName);
     LOGGER.fine("File " + file + " does not exist. Trying " + tmpFile);
-    return new FileInputStream(tmpFile);
+    return Files.newInputStream(tmpFile.toPath());
   }
 
   /**
@@ -124,9 +124,7 @@ public class GZIPXMLFile {
     Reader tmpReader = new BufferedReader(new InputStreamReader(getInputStream(), "UTF-8"));
     try {
       return xs.fromXML(tmpReader);
-    } catch (XStreamException e) {
-      throw new IOException("Unable to read " + file, e);
-    } catch (Error e) { // mostly reflection errors
+    } catch (XStreamException | Error e) {
       throw new IOException("Unable to read " + file, e);
     } finally {
       tmpReader.close();
@@ -145,9 +143,7 @@ public class GZIPXMLFile {
     Reader tmpReader = new BufferedReader(new InputStreamReader(getInputStream(), "UTF-8"));
     try {
       return xs.unmarshal(DEFAULT_DRIVER.createReader(tmpReader), anObject);
-    } catch (XStreamException e) {
-      throw new IOException("Unable to read " + file, e);
-    } catch (Error e) {// mostly reflection errors
+    } catch (XStreamException | Error e) {
       throw new IOException("Unable to read " + file, e);
     } finally {
       tmpReader.close();
@@ -162,7 +158,7 @@ public class GZIPXMLFile {
    */
   public void write(Object anObject) throws IOException {
     mkdirs();
-    AtomicGZIPFileWriter tmpWriter = new AtomicGZIPFileWriter(file);
+    AtomicGZIPFileWriter tmpWriter = new AtomicGZIPFileWriter(file); // NOPMD
     try {
       tmpWriter.write("<?xml version='1.0' encoding='UTF-8'?>\n");
       xs.toXML(anObject, tmpWriter);
@@ -255,7 +251,7 @@ public class GZIPXMLFile {
       }
     }
     InputSource tmpInput = new InputSource(file.toURI().toASCIIString());
-    tmpInput.setByteStream(new FileInputStream(file));
+    tmpInput.setByteStream(Files.newInputStream(file.toPath()));
 
     try {
       JAXP.newSAXParser().parse(file, new DefaultHandler() {

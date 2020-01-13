@@ -29,7 +29,7 @@ public class Path {
 
   private static final String DELIMITER = "/";
 
-  private List<String> path = new ArrayList<>();
+  private List<String> path = new ArrayList<>(); // NOPMD
   private StringBuilder pathAsString = new StringBuilder();
 
   /**

@@ -97,7 +97,7 @@ public class History {
         if (tmpResult != null) {
           tmpList.add(tmpResult);
         }
-      } catch (Exception e) {
+      } catch (Exception e) { // NOPMD
         // could not find the result -> ignore build
       }
     }
@@ -373,7 +373,7 @@ public class History {
       String tmpBuildName = baseResult.getOwner().getDisplayName();
       String tmpSlaveName = baseResult.getOwner().getBuiltOnStr();
       if (tmpSlaveName != null) {
-        tmpBuildName += ' ' + tmpSlaveName;
+        tmpBuildName += ' ' + tmpSlaveName; // NOPMD
       }
       return tmpBuildName;
     }

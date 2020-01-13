@@ -17,9 +17,9 @@
 package org.wetator.jenkins.parser;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -323,7 +323,7 @@ public class WetatorResultParser {
       File tmpBaseDir = tmpResultScanner.getBasedir();
       for (String tmpFile : tmpResultFiles) {
         File tmpReportFile = new File(tmpBaseDir, tmpFile);
-        try (InputStream tmpInputStream = new FileInputStream(tmpReportFile)) {
+        try (InputStream tmpInputStream = Files.newInputStream(tmpReportFile.toPath())) {
           TestResults tmpTestResults = parse(tmpInputStream);
           if (tmpTestResults != null) {
             tmpAllResults.add(tmpTestResults);

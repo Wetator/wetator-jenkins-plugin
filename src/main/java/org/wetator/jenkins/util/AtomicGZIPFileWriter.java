@@ -18,11 +18,11 @@ package org.wetator.jenkins.util;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.util.zip.GZIPOutputStream;
 
 import hudson.Util;
@@ -68,11 +68,12 @@ public class AtomicGZIPFileWriter extends Writer {
       throw new IOException("Failed to create a temporary file in " + tmpDirectory, e);
     }
     destinationFile = aFile;
-    if (anEncoding == null) {
-      anEncoding = Charset.defaultCharset().name();
+    String tmpEncoding = anEncoding;
+    if (tmpEncoding == null) {
+      tmpEncoding = Charset.defaultCharset().name();
     }
     core = new BufferedWriter(
-        new OutputStreamWriter(new GZIPOutputStream(new FileOutputStream(temporaryFile)), anEncoding));
+        new OutputStreamWriter(new GZIPOutputStream(Files.newOutputStream(temporaryFile.toPath())), tmpEncoding));
   }
 
   @Override
