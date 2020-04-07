@@ -5,6 +5,7 @@
 .settings/org.eclipse.jdt.core.prefs -text svneol=unset#text/plain
 .settings/org.eclipse.jdt.ui.prefs -text svneol=unset#text/plain
 .settings/org.eclipse.m2e.core.prefs -text svneol=unset#text/plain
+/Jenkinsfile -text
 /LICENSE.txt -text svneol=unset#text/plain
 /pom.xml -text svneol=unset#text/plain
 /readme.txt -text svneol=unset#text/plain
