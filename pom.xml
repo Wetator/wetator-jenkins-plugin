@@ -143,12 +143,12 @@
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>3.1.12.2</version><!--$NO-MVN-MAN-VER$-->
+                <version>4.0.0</version><!--$NO-MVN-MAN-VER$-->
                 <dependencies>
                     <dependency>
                         <groupId>com.github.spotbugs</groupId>
                         <artifactId>spotbugs</artifactId>
-                        <version>3.1.12</version>
+                        <version>4.0.1</version>
                     </dependency>
                 </dependencies>
                 <executions>
@@ -170,17 +170,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.12.0</version><!--$NO-MVN-MAN-VER$-->
+                <version>3.13.0</version><!--$NO-MVN-MAN-VER$-->
                 <dependencies>
                     <dependency>
                         <groupId>net.sourceforge.pmd</groupId>
                         <artifactId>pmd-core</artifactId>
-                        <version>6.20.0</version>
+                        <version>6.21.0</version>
                     </dependency>
                     <dependency>
                         <groupId>net.sourceforge.pmd</groupId>
                         <artifactId>pmd-java</artifactId>
-                        <version>6.20.0</version>
+                        <version>6.21.0</version>
                     </dependency>
                 </dependencies>
                 <executions>
