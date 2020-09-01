@@ -51,7 +51,7 @@ This is a subset of PMD's 'Code Style' ruleset.
     <!-- not wanted <rule ref="category/java/codestyle.xml/LinguisticNaming" /> -->
     <!-- not wanted <rule ref="category/java/codestyle.xml/LocalHomeNamingConvention" /> -->
     <!-- not wanted <rule ref="category/java/codestyle.xml/LocalInterfaceSessionNamingConvention" /> -->
-    <!-- not wanted <rule ref="category/java/codestyle.xml/LocalVariableCouldBeFinal" /> -->
+    <rule ref="category/java/codestyle.xml/LocalVariableCouldBeFinal" />
     <rule ref="category/java/codestyle.xml/LocalVariableNamingConventions">
         <properties>
             <property name="localVarPattern">
@@ -67,7 +67,7 @@ This is a subset of PMD's 'Code Style' ruleset.
     </rule>
     <!-- not wanted <rule ref="category/java/codestyle.xml/LongVariable" /> -->
     <!-- not wanted <rule ref="category/java/codestyle.xml/MDBAndSessionBeanNamingConvention" /> -->
-    <!-- not wanted <rule ref="category/java/codestyle.xml/MethodArgumentCouldBeFinal" /> -->
+    <rule ref="category/java/codestyle.xml/MethodArgumentCouldBeFinal" />
     <!-- not wanted <rule ref="category/java/codestyle.xml/MethodNamingConventions" /> -->
     <rule ref="category/java/codestyle.xml/NoPackage" />
     <!-- not wanted <rule ref="category/java/codestyle.xml/OnlyOneReturn" /> -->
@@ -80,6 +80,7 @@ This is a subset of PMD's 'Code Style' ruleset.
     <!-- not wanted <rule ref="category/java/codestyle.xml/ShortVariable" /> -->
     <!-- not wanted <rule ref="category/java/codestyle.xml/TooManyStaticImports" /> -->
     <rule ref="category/java/codestyle.xml/UnnecessaryAnnotationValueElement" />
+    <rule ref="category/java/codestyle.xml/UnnecessaryCast" />
     <rule ref="category/java/codestyle.xml/UnnecessaryConstructor" />
     <rule ref="category/java/codestyle.xml/UnnecessaryFullyQualifiedName" />
     <rule ref="category/java/codestyle.xml/UnnecessaryLocalBeforeReturn" />

@@ -1,11 +1,11 @@
 HOW TO SETUP THE IDE
 ====================
 Currently we use
-    Eclipse 2020-03 (4.15.0)
-    Eclipse Checkstyle Plugin 8.29.0 (based on Checkstyle 8.29)
+    Eclipse 2020-06 (4.16.0)
+    Eclipse Checkstyle Plugin 8.35.0 (based on Checkstyle 8.35)
     Maven 3.6.3
 with optionally
-	Eclipse m2e Plugin 1.15.0
+	Eclipse m2e Plugin 1.16.0
 	m2e connector for build-helper-maven-plugin	0.15.0
 as IDE. All other settings (code format, warnings, etc.) are stored with the project.
 
