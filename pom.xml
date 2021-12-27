@@ -29,12 +29,12 @@
     <packaging>hpi</packaging>
 
     <name>Wetator Report Plug-in</name>
-    <url>http://www.wetator.org</url>
+    <url>https://www.wetator.org</url>
     <description>Smart web application testing</description>
     <inceptionYear>2008</inceptionYear>
     <organization>
         <name>wetator.org</name>
-        <url>http://www.wetator.org</url>
+        <url>https://www.wetator.org</url>
     </organization>
     <licenses>
         <license>
@@ -60,19 +60,19 @@
             <name>Frank Danek</name>
             <id>frank.danek</id>
             <email>frank.danek@gmail.com</email>
-            <url>http://www.wetator.org/</url>
+            <url>https://www.wetator.org/</url>
             <timezone>+1</timezone>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:svn:http://wetator.repositoryhosting.com/svn_public/wetator_wetator/trunk/wetator-jenkins-plugin</connection>
-        <developerConnection>scm:svn:https://wetator.repositoryhosting.com/svn/wetator_wetator/trunk/wetator-jenkins-plugin</developerConnection>
-        <url>http://wetator.repositoryhosting.com/svn_public/wetator_wetator</url>
+        <connection>scm:git:https://github.com/Wetator/wetator-jenkins-plugin</connection>
+        <developerConnection>scm:git:https://github.com/Wetator/wetator-jenkins-plugin</developerConnection>
+        <url>https://github.com/Wetator/wetator-jenkins-plugin</url>
     </scm>
     <issueManagement>
-        <system>trac</system>
-        <url>https://wetator.repositoryhosting.com/trac/wetator_wetator/report/1</url>
+        <system>GitHub</system>
+        <url>https://github.com/Wetator/wetator-jenkins-plugin/issues</url>
     </issueManagement>
     <ciManagement>
         <system>jenkins</system>
@@ -316,7 +316,7 @@
     <repositories>
         <repository>
             <id>repo.jenkins-ci.org</id>
-            <url>http://repo.jenkins-ci.org/public/</url>
+            <url>https://repo.jenkins-ci.org/public/</url>
         </repository>
         <repository>
             <id>sonatype-snapshots</id>
@@ -333,7 +333,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>repo.jenkins-ci.org</id>
-            <url>http://repo.jenkins-ci.org/public/</url>
+            <url>https://repo.jenkins-ci.org/public/</url>
         </pluginRepository>
     </pluginRepositories>
 
