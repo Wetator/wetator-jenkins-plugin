@@ -17,10 +17,11 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
+                checkout([$class: 'GitSCM',
+                    branches: [[name: '*/master']],
+                    extensions: [],
+                    userRemoteConfigs: [[url: 'https://github.com/Wetator/wetator-jenkins-plugin.git']]])
                 checkout([$class: 'SubversionSCM',
-                    locations: [[remote: 'http://wetator.repositoryhosting.com/svn_public/wetator_wetator/trunk/wetator-jenkins-plugin', local: '.', depthOption: 'infinity', ignoreExternalsOption: true, cancelProcessOnExternalsFail: true]],
-                    quietOperation: true,
-                    workspaceUpdater: [$class: 'CheckoutUpdater']])
             }
         }
         stage('build') {
