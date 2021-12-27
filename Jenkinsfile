@@ -21,7 +21,6 @@ pipeline {
                     branches: [[name: '*/master']],
                     extensions: [],
                     userRemoteConfigs: [[url: 'https://github.com/Wetator/wetator-jenkins-plugin.git']]])
-                checkout([$class: 'SubversionSCM',
             }
         }
         stage('build') {
